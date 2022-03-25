@@ -1,54 +1,10 @@
 <template>
-    <div class="ms_containerflex">
-        <div class="ms_container">
-            <div v-for="(post, index) in posts" :key="index" class="ms_post">
-                
-                <div class="ms_title">
-                    <h3>{{post.title}}</h3>
-                </div>
-
-                <div class="ms_category_author_box">
-                    <div class="ms_author">
-                        <span>{{post.author}}</span>
-                    </div>
-                    <div class="ms_category">
-                        <p>{{post.category ? post.category.name : "nessuna categoria" }}</p>
-                    </div>
-                </div>
-                
-                <div class="ms_content">
-                    {{post.content}} 
-                </div>
-
-                <h4>Categoria:</h4>
-                <p>{{post.category ? post.category.name : "nessuna categoria" }}</p>
-                <h4>Tag:</h4>
-                <div >
-                    <p v-for="(tag, index) in post.tags" :key="index"  >
-                    {{ tag.name }}
-                </p>
-                </div>
-            </div>
-        </div>
-    </div>
+<router-view :key="$route.path"></router-view>
 </template>
 
 <script>
 export default {
     name:"Main",
-    data(){
-        return{
-            posts: []
-        }
-    },
-    created(){
-        axios
-        .get("/api/posts")
-        .then((data_api)=>{
-            this.posts = data_api.data
-            console.log(this.posts);
-        })
-    }
 }
 </script>
 

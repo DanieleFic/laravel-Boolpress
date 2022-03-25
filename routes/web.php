@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front');
 });
 
 Auth::routes();
@@ -32,3 +32,8 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('/posts', 'PostController');
     });
+
+// rotte per l'area pubblica, front end
+Route::get("{any?}", function() {
+    return view("front");
+    })->where("any", ".*");
