@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 //tutte le rotte ora passano di qua
 import Home from "./pages/Home";
+import PostHome from "./pages/PostHome";
 import About from "./pages/About";
 import SinglePost from "./pages/SinglePost";
 import PageNotFound from "./pages/PageNotFound";
@@ -16,6 +17,11 @@ const router = new VueRouter({
             path: "/",
             name: "home",
             component: Home
+        },
+        {
+            path: "/post",
+            name: "post-home",
+            component: PostHome
         },
         {
             path: "/chi-siamo",

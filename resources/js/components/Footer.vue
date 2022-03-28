@@ -15,32 +15,46 @@
         <div class="ms_container">
             <div class="ms_container-ul">
                 <ul class="ms_lista">
-                <p>SERVICE</p>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-            </ul>
-            <ul class="ms_lista">
-                <p>COMPANY</p>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-            </ul>
-            <ul class="ms_lista">
-                <p>RESOURCES</p>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-                <li>lista</li>
-            </ul>
+                    <p>SERVICE</p>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                </ul>
+                <ul class="ms_lista">
+                    <p>COMPANY</p>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                </ul>
+                <ul class="ms_lista">
+                    <p>RESOURCES</p>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                </ul>
+                <ul class="ms_lista">
+                    <p>RESOURCES</p>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                    <li>lista</li>
+                </ul>
+            </div>
+            <div class="ms_social">
+                <img class="ms_logo" :src="'/img/logo.png'" >
+                <h3>SOCIAL</h3>
+                <i class="fa-brands fa-facebook"></i>
             </div>
         </div>
     </div>
@@ -72,7 +86,7 @@ export default {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-around;
+                justify-content: space-between;
                 
                 .ms_partner-logo{
                     width: 75px;
@@ -88,13 +102,15 @@ export default {
         margin: 0 auto;
         max-width: 1300px;
         height: 100%;
+        display: flex;
+        flex-direction: row;
             .ms_container-ul{
                 padding-top: 50px;
                 display: flex;
                 flex-direction: row;
             }
             .ms_lista{
-                margin-right:50px;
+                margin-right:130px;
                 font-family: 'Lato', sans-serif;
                 color: #F8F2DC;
                 text-shadow: 0.3px 0.3px #CD4631;
@@ -104,6 +120,18 @@ export default {
                     &:hover{
                         color: #81ADC8;
                     }
+                }
+            }
+            .ms_social{
+                padding-top: 50px;
+                font-family: 'Lato', sans-serif;
+                color: #F8F2DC;
+
+                .ms_logo{
+                    margin-bottom: 50px;
+                }
+                .bi{
+                    width: 30px;
                 }
             }
         }
