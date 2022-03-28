@@ -1,10 +1,18 @@
 <template>
 
-    <div class="ms_containerflex">
+    <div class="ms_container-flex">
         <div class="ms_container">
             <img class="ms_logo" :src="'/img/logo.png'" >
-            <router-link :to="{ name: 'home' }">Home</router-link>
-            <router-link :to="{ name: 'about' }">Chi siamo</router-link>
+            <nav>
+                <div class="ms_nav">
+                    <router-link  :to="{ name: 'home' }">Home</router-link>
+                    <router-link  :to="{ name: 'about' }">Posts</router-link>
+                    <router-link  :to="{ name: 'about' }">Chi siamo</router-link>
+                    <router-link  :to="{ name: 'about' }">Contatti</router-link>
+                    <router-link  :to="{ name: 'about' }">More</router-link>
+                    
+                </div>
+            </nav>
         </div>
     </div>
     
@@ -23,9 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .ms_containerflex{
+    .ms_container-flex{
+        background-color: #DEA47E;
         width: 100%;
-        background-color: white;
         .ms_container{
             margin: 0 auto;
             max-width: 1300px;
@@ -34,6 +42,22 @@ export default {
             align-items: center;
             .ms_logo{
                 width: 200px;
+            }
+            .ms_nav{
+                font-family: 'Lato', sans-serif;
+                font-weight: 900;
+                color: #F8F2DC;
+                margin-left: 500px ;
+                a{
+                    font-size: 25px;
+                    text-decoration: none;
+                    color: white;
+                    margin: 0px 5px;
+                    text-shadow: 0.5px 0.5px #CD4631;
+                    &:hover{
+                        color:#81ADC8 ;
+                    }
+                }
             }
         }
     }

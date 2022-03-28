@@ -17,25 +17,32 @@
             <form action="{{route ("admin.posts.store") }}" method="POST" role="form">
                 @csrf
                 <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label">Aggiungi il titolo</label>
-                <input type="text" class="form-control" name="title" value="{{old("title")}}" placeholder="Inserisci titolo post"/>
-                @error('title')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    <label for="exampleInputEmail1" class="form-label">Aggiungi il titolo</label>
+                    <input type="text" class="form-control" name="title" value="{{old("title")}}" placeholder="Inserisci titolo post"/>
+                    @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label">Aggiungi l'autore</label>
-                <input name="author" value="{{old("author")}}" type="text" class="form-control" id="exampleInputEmail1" placeholder="Inserici l'autore">
-                @error('author')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    <label for="exampleInputEmail1" class="form-label">Aggiungi l'autore</label>
+                    <input name="author" value="{{old("author")}}" type="text" class="form-control" id="exampleInputEmail1" placeholder="Inserici l'autore">
+                    @error('author')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputAddress">Aggiungi immagine</label>
+                    <textarea name="image" value="{{old("image")}}" type="text" class="form-control" id="inputAddress" placeholder="url copertina"></textarea>
+                    @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Aggiungi il contenuto</label>
-                <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Inserisci il contenuto" class="form-control bcontent" name="content">{{old("description")}}</textarea>
-                @error('content')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                    <label for="exampleFormControlTextarea1">Aggiungi il contenuto</label>
+                    <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Inserisci il contenuto" class="form-control bcontent" name="content">{{old("description")}}</textarea>
+                    @error('content')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <select name="category_id" id=""

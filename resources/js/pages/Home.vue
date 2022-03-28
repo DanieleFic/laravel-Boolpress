@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Home</h1>
+        <h1 class="ms_title">Benvenuto in Boolpress</h1>
         <Posts />
     </div>
     
@@ -16,6 +16,11 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+    .ms_title{
+        color: #CD4631;
+        margin: 20px 0px;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+    }
 </style>

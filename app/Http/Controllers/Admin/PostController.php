@@ -21,7 +21,8 @@ class PostController extends Controller
         "author"=>"required|string|max:50",
         'content' => 'required',
         'category_id' => 'nullable|exists:categories,id', //deve esistere come id nella tabella categories
-        'tags.*'=>'required'
+        'tags.*'=>'required',
+        'image' => 'nullable|url'
         //.* valida tutti gli elementi dell array
     ];
     /**
@@ -67,7 +68,7 @@ class PostController extends Controller
         ]); */
         /* var_dump($this->validation); */
         $request->validate($this->validation);
-
+        
         
         $form_data = $request->all();
         /* dd($form_data); */

@@ -9,7 +9,8 @@
         <li class="table-header">
             <div class="col col-1">title</div>
             <div class="col col-2">author</div>
-            <div class="col col-5">content</div>
+            <div class="col col-4">content</div>
+            <div class="col col-1">image</div>
             <div class="col col-1">Slug</div>
             <div class="col col-1">Categoria</div>
             <div class="col col-1">Tags</div>
@@ -21,7 +22,8 @@
                     {{$element->title}}
                 </div>
                 <div class="col col-2">{{$element->author}}</div>
-                <div class="col col-5">{{$element->content}}</div>
+                <div class="col col-4">{{$element->content}}</div>
+                <div class="col col-1" data-label="Amount"><img class="ms_img" src="{{$element->image}}" alt=""></div>
                 <div class="col col-1">{{$element->slug}}</div>
                 <div class="col col-1">{{$element->category ? $element->category->name : '-'}}</div>
                 
