@@ -7,6 +7,7 @@ Vue.use(VueRouter);
 import Home from "./pages/Home";
 import PostHome from "./pages/PostHome";
 import About from "./pages/About";
+import Contatti from "./pages/Contatti";
 import SinglePost from "./pages/SinglePost";
 import PageNotFound from "./pages/PageNotFound";
 
@@ -27,6 +28,11 @@ const router = new VueRouter({
             path: "/chi-siamo",
             name: "about",
             component: About
+        },
+        {
+            path: "/contatti",
+            name: "contatti",
+            component: Contatti
         },
         {
             path: "/posts/:slug",

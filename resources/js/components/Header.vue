@@ -6,9 +6,9 @@
             <nav>
                 <div class="ms_nav">
                     <router-link  :to="{ name: 'home' }">Home</router-link>
-                    <router-link  :to="{ name: 'about' }">Posts</router-link>
+                    <router-link  :to="{ name: 'post-home' }">Posts</router-link>
                     <router-link  :to="{ name: 'about' }">Chi siamo</router-link>
-                    <router-link  :to="{ name: 'about' }">Contatti</router-link>
+                    <router-link  :to="{ name: 'contatti' }">Contatti</router-link>
                     <router-link  :to="{ name: 'about' }">More</router-link>
                     
                 </div>
