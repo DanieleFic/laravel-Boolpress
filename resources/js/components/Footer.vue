@@ -77,11 +77,10 @@ export default {
         .ms_container{
             margin: 0 auto;
             max-width: 1300px;
-            height: 100%;
             .ms_prefooter{
                 font-family: 'Lato', sans-serif;
                 color: #F8F2DC;
-                height: 100px;
+                padding: 20px 0px;
                 width: 100%;
                 display: flex;
                 flex-direction: row;

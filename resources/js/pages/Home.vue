@@ -6,7 +6,7 @@
             <h1 class="  ms_title">Benvenuto Nella Mia Versione del CMS più famoso al mondo!</h1>
             <h3 class="ms_text">Progettato con Vue e Laravel</h3>
             <p class="ms_text">Progetto creato da Daniele Ficuciello studente classe 51 di Boolean </p>
-            <h2>Framework usati </h2>
+            <h2 class="ms_text">Framework usati </h2>
         </div>
 
     <!-- inizio Box dei Framwork usati -->
@@ -42,7 +42,7 @@
             <button class="ms_btn"><router-link :to="{name: 'post-home' }"><span>Leggi Post</span></router-link></button>
         </div>
     </div>
-    
+
 </div>
     
     
@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
     .ms_container-flex{
         width: 100%;
-        margin: 50px 0px;
+        margin-top: 50px;
         font-family: 'Lato', sans-serif;
     }
     .ms_container{
@@ -73,7 +73,7 @@ export default {
     .ms_title{
         color: #CD4631;
         margin: 20px 0px;
-        animation:heartBeat 10s infinite;
+        animation:heartBeat 3s;
         /* animation-duration: 1s ; */
     }
     .ms_text{
@@ -82,7 +82,7 @@ export default {
     }
 
     .ms_box-button{
-        height: 250px;
+        height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -91,7 +91,6 @@ export default {
     .ms_btn{
         font-family: 'Lato', sans-serif;
         font-weight: 900;
-        color: red;
         padding: 6px 25px;
         font-size: 20px;
         width: 200px;
@@ -124,7 +123,7 @@ export default {
             width: 100%;
             transition: transform 1s;
             &:hover{
-                transform: scale(1.2);
+                transform: scale(0.8);
             }
             .ms_logo{
                 width: 10%;
