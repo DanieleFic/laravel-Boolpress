@@ -31,6 +31,8 @@
         "bootstrap-icons": "^1.8.1",
         "font-awesome": "^4.7.0",
         "vue-faq-accordion": "^1.6.2",
-        "vue-router": "^3.5.3"
+        "vue-router": "^3.5.3",
+        "vue-simple-spinner": "^1.2.10",
+        "vue2-google-maps": "^0.10.7"
     }
 }

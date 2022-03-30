@@ -7,7 +7,14 @@ window.Vue = require('vue');
 import App from "./App.vue";
 
 
+import * as VueGoogleMaps from 'vue2-google-maps'
 
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyABMLuSrPaDRD3EEmMW1j8mught728AqV0',
+    libraries: 'places',
+  }
+});
 
 // aggiungiamo l'import del file router.js
 import router from "./router";

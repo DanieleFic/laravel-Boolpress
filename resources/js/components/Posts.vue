@@ -1,51 +1,39 @@
 <template>
     <div class="ms_containerflex">
         <div class="ms_container">
-            <div v-for="(post, index) in posts" :key="index" class="ms_post">
-                
+            <!-- ciclo for per stampare tutti i post sulla vista  -->
+            <div class="ms_post" v-for="(post, index) in posts" :key="index" >
+                <!-- Immagine del post -->
                 <div class="ms_image">
                     <img :src="post.image" alt="">
                 </div>
-
+                <!-- Categoria del post -->
                 <div class="ms_category">
                         <p>{{post.category ? post.category.name : "nessuna categoria" }}</p>
                     </div>
-               <!--  <div class="ms_taxbox">
+            <!--  <div class="ms_taxbox">
                     <span class="ms_tag" v-for="(tag, index) in post.tags" :key="index"  >
                     {{ tag.name }}
                     </span>
                 </div> -->
-                
-
+                <!-- Titolo e contenuto del  post -->
                 <div class="ms_postbody">
                     <div class="ms_title_content">
                         <div class="ms_title">
                             <h2>{{post.title}}</h2>
                         </div>
                         <div class="ms_content">
-                            <span class="text-concat">
+                            <p class="text-concat">
                                 {{post.content}} 
-                            </span>
+                            </p>
                         </div>
                     </div>
-                    
-
-                   <!--  <div class="ms_author">
-                        <h4>{{post.author}}</h4>
-                    </div> -->
-                   
-                    <button class="ms_btn"><router-link :to="{name: 'single-post', params:{ slug: post.slug } }"><span>Leggi Post</span> </router-link></button>
+                    <!-- bottone per passare alla vista del singolo post -->
+                    <router-link :to="{name: 'single-post', params:{ slug: post.slug } }"><button class="ms_btn"><span>Leggi Post</span> </button></router-link>
                 </div>
                 
-                
-                
-
-                
-                
             </div>
-            
         </div>
-        
     </div>
 </template>
 
@@ -69,6 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
     .ms_containerflex{
         width: 100%;
         background-color: white;
@@ -89,7 +78,7 @@ export default {
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
 
-        a{
+        span{
             text-decoration: none;
             color: #F8F2DC;
         }
@@ -122,7 +111,8 @@ export default {
 
         .ms_title{
             margin-bottom: 0.5rem;
-            font-family: 'Roboto Slab', serif;
+            font-family: 'Lato', sans-serif;
+            color:#CD4631 ;
         }
         .ms_category_author_box{
             width: 100%;
@@ -142,6 +132,7 @@ export default {
             width: 100%;
             height: 50px;
             padding: 5px 5px;
+            color: #81ADC8;
 
             .text-concat{
                 position: relative;
@@ -196,6 +187,7 @@ export default {
         background-repeat: no-repeat;
         background-size: 0% 100%;
         transition: background-size .5s, color .5s;
+        cursor: pointer;
 
         &:hover{
             background-size: 100% 100%;
