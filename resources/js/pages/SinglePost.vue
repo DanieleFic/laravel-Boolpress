@@ -10,6 +10,31 @@
                     {{tag.name}}
                 </li>
             </ul>
+            <!-- <div v-for="(comment,index) in post.comment" :key="index">{{comment.name}}</div> -->
+        </div>
+        <div>
+            <h3>Lascia un commento</h3>
+            <form @submit.prevent="addComment()">
+                <input type="text" id="name" placeholder="Inserisci il Nome"
+                        v-model="formData.name">
+                <textarea  id="content" cols="30" rows="10" placeholder="Inserisci commento" 
+                v-model="formData.content">
+                </textarea>
+
+               <!--  <div v-if="formErrors.content" style="background:red; color:white;">
+                    <ul>
+                        <li v-for="(error,index) in formErrors.content" :key="index">
+                            {{error}}
+                        </li>
+                    </ul>
+                </div> -->
+                
+                <button type="submit">Aggiungi Commento</button>
+            </form>
+            <div v-show="commentSent" style="background:green; color:white;">
+                Commento in fase di approvazione!
+
+            </div>
         </div>
     </div>
 </template>
@@ -19,7 +44,14 @@ export default {
     name:"SinglePost",
     data(){
         return{
-            post: {}
+            post: {},
+            formData:{
+                name:"",
+                content:"",
+                post_id:null
+            },
+            commentSent: false,
+            formErrors: {}
         }
     },
     created(){
@@ -27,11 +59,30 @@ export default {
         .get(`/api/posts/${this.$route.params.slug}`)
         .then((data_api)=>{
             this.post = data_api.data
-            console.log(this.post);
+            this.formData.post_id = this.post_id
+            /* console.log(this.post); */
         }).catch((error)=>{
             //handle error
             this.$router.push({name: "page-404"})
         })
+    },
+
+    methods:{
+        addComment(){
+            axios
+            //per avere i dati con chiave valore mettiamo this.formData
+            .post(`api/comments/`, this.formData)
+            .then( (response)=>{
+                console.log(response)
+                this.formData.name = "";
+                this.formData.content = "";
+                console.log('sei nell response')
+            }).catch((error) =>{
+                console.log(error)
+                console.log('sei nell error')
+                this.formErrors = error.response.data.errors;
+            })
+        }
     }
 }
 </script>

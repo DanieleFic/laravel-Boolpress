@@ -2077,8 +2077,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header",
   data: function data() {
@@ -2468,11 +2466,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SinglePost",
   data: function data() {
     return {
-      post: {}
+      post: {},
+      formData: {
+        name: "",
+        content: "",
+        post_id: null
+      },
+      commentSent: false,
+      formErrors: {}
     };
   },
   created: function created() {
@@ -2480,13 +2510,31 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (data_api) {
       _this.post = data_api.data;
-      console.log(_this.post);
+      _this.formData.post_id = _this.post_id;
+      /* console.log(this.post); */
     })["catch"](function (error) {
       //handle error
       _this.$router.push({
         name: "page-404"
       });
     });
+  },
+  methods: {
+    addComment: function addComment() {
+      var _this2 = this;
+
+      axios //per avere i dati con chiave valore mettiamo this.formData
+      .post("api/comments/", this.formData).then(function (response) {
+        console.log(response);
+        _this2.formData.name = "";
+        _this2.formData.content = "";
+        console.log('sei nell response');
+      })["catch"](function (error) {
+        console.log(error);
+        console.log('sei nell error');
+        _this2.formErrors = error.response.data.errors;
+      });
+    }
   }
 });
 
@@ -5070,10 +5118,6 @@ var render = function () {
             _c("router-link", { attrs: { to: { name: "contatti" } } }, [
               _vm._v("Contatti"),
             ]),
-            _vm._v(" "),
-            _c("router-link", { attrs: { to: { name: "about" } } }, [
-              _vm._v("More"),
-            ]),
           ],
           1
         ),
@@ -5568,6 +5612,94 @@ var render = function () {
           ),
         ])
       : _vm._e(),
+    _vm._v(" "),
+    _c("div", [
+      _c("h3", [_vm._v("Lascia un commento")]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          on: {
+            submit: function ($event) {
+              $event.preventDefault()
+              return _vm.addComment()
+            },
+          },
+        },
+        [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.formData.name,
+                expression: "formData.name",
+              },
+            ],
+            attrs: {
+              type: "text",
+              id: "name",
+              placeholder: "Inserisci il Nome",
+            },
+            domProps: { value: _vm.formData.name },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.formData, "name", $event.target.value)
+              },
+            },
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.formData.content,
+                expression: "formData.content",
+              },
+            ],
+            attrs: {
+              id: "content",
+              cols: "30",
+              rows: "10",
+              placeholder: "Inserisci commento",
+            },
+            domProps: { value: _vm.formData.content },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.formData, "content", $event.target.value)
+              },
+            },
+          }),
+          _vm._v(" "),
+          _c("button", { attrs: { type: "submit" } }, [
+            _vm._v("Aggiungi Commento"),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.commentSent,
+              expression: "commentSent",
+            },
+          ],
+          staticStyle: { background: "green", color: "white" },
+        },
+        [_vm._v("\n            Commento in fase di approvazione!\n\n        ")]
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
