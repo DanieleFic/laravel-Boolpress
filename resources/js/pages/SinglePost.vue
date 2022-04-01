@@ -71,7 +71,7 @@ export default {
         addComment(){
             axios
             //per avere i dati con chiave valore mettiamo this.formData
-            .post(`api/comments/`, this.formData)
+            .post(`/api/comments/`, this.formData)
             .then( (response)=>{
                 console.log(response)
                 this.formData.name = "";

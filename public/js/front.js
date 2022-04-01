@@ -2524,7 +2524,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios //per avere i dati con chiave valore mettiamo this.formData
-      .post("api/comments/", this.formData).then(function (response) {
+      .post("/api/comments/", this.formData).then(function (response) {
         console.log(response);
         _this2.formData.name = "";
         _this2.formData.content = "";

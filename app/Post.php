@@ -13,7 +13,7 @@ class Post extends Model
     public function category(){
 
         return $this->belongsTo('App\Category');
-        
+
     }
     //public function che collega i tag ai post || un post può avere più tag
     public function tags(){
