@@ -24,5 +24,6 @@ Route::namespace('Api')->name('api.')->group(function(){
     Route::get('/posts','PostController@index')->name('posts');
     Route::get('/posts/{slug}','PostController@show')->name('posts.show');
     //route di tipo post per i commenti che manda i dati al nostro controller dei commenti
-    Route::post("/comments",'CommentController@store')->name('comments.store');
+    Route::post("/comments", "CommentController@store")->name('comments.store');
+    
 });

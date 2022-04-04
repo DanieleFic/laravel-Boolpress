@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Validator;
 
@@ -17,8 +19,8 @@ class CommentController extends Controller
         
         //validazione dei dati che ci arrivano dal request
         $validator = Validator::make($data, [
-            'name' =>'nullable'|'string'|'max:50',
-            'content' => 'string'|'required',
+            'name' => 'nullable|string|max:50',
+            'content' => 'string|required',
             'post_id' => 'exists:posts,id'
         ]);
 
@@ -31,11 +33,12 @@ class CommentController extends Controller
         }
 
         $newComment = new Comment();
+
         if( !empty($data['name']) ){
             $newComment->name = $data['name'];
         }
         $newComment->content = $data['content'];
-        $newComment->post_id = $data['post_id'];
+        $newComment->post_id = $data["post_id"];
         $newComment->save();
 
         
