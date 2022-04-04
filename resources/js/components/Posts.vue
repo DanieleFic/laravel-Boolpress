@@ -9,8 +9,8 @@
                 </div>
                 <!-- Categoria del post -->
                 <div class="ms_category">
-                        <p>{{post.category ? post.category.name : "nessuna categoria" }}</p>
-                    </div>
+                    <p>{{post.category ? post.category.name : "nessuna categoria" }}</p>
+                </div>
             <!--  <div class="ms_taxbox">
                     <span class="ms_tag" v-for="(tag, index) in post.tags" :key="index"  >
                     {{ tag.name }}

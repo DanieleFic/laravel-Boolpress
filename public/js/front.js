@@ -2518,6 +2518,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SinglePost",
   data: function data() {
@@ -2752,7 +2758,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms_containerflex[data-v-67cb3b51] {\n  width: 100%;\n}\n.ms_containerflex .ms_container[data-v-67cb3b51] {\n  margin: 0 auto;\n  max-width: 1300px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n.ms_containerflex .ms_container .ms_title[data-v-67cb3b51] {\n  width: 100%;\n  background-color: antiquewhite;\n}\n.ms_containerflex .ms_container .ms_title h1[data-v-67cb3b51] {\n  text-align: center;\n}\n.ms_containerflex .ms_container .ms_image[data-v-67cb3b51] {\n  width: 100%;\n}\n.ms_containerflex .ms_container .ms_image img[data-v-67cb3b51] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".ms_containerflex[data-v-67cb3b51] {\n  width: 100%;\n}\n.ms_containerflex .ms_container[data-v-67cb3b51] {\n  margin: 0 auto;\n  max-width: 1300px;\n  display: flex;\n  justify-content: center;\n  font-family: \"Red Hat Mono\", monospace;\n}\n.ms_containerflex .ms_container .ms_postbox[data-v-67cb3b51] {\n  margin: 25px 0px;\n  width: 50%;\n}\n.ms_containerflex .ms_container .ms_title[data-v-67cb3b51] {\n  width: 100%;\n  color: #CD4631;\n}\n.ms_containerflex .ms_container .ms_title h1[data-v-67cb3b51] {\n  font-family: \"Lato\", sans-serif;\n  margin: 20px 0px;\n  text-align: center;\n}\n.ms_containerflex .ms_container .ms_image[data-v-67cb3b51] {\n  position: relative;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.ms_containerflex .ms_container .ms_image img[data-v-67cb3b51] {\n  margin: 20px 0px;\n  width: 100%;\n}\n.ms_containerflex .ms_container .ms_categorybox p[data-v-67cb3b51] {\n  font-family: \"Lato\", sans-serif;\n  position: absolute;\n  top: 30px;\n  right: 5px;\n  border-radius: 3px;\n  padding: 0px 7px;\n  background-color: #CD4631;\n  color: white;\n}\n.ms_containerflex .ms_container .ms_content[data-v-67cb3b51] {\n  padding: 10px 10px;\n  line-height: 1.2rem;\n}\n.ms_containerflex .ms_container .ms_tagbox[data-v-67cb3b51] {\n  padding: 10px 10px;\n}\n.ms_containerflex .ms_container .ms_tagbox span[data-v-67cb3b51] {\n  border: 1px solid #81ADC8;\n  background-color: #DEA47E;\n  padding: 2px;\n  border-radius: 5px;\n}\n.ms_containerflex .ms_container .ms_commentbox[data-v-67cb3b51] {\n  display: flex;\n  flex-direction: column;\n  margin: 5px 0px;\n  padding: 10px 10px;\n  min-height: 100px;\n  border-radius: 5px;\n  border: 0.5px solid #81ADC8;\n  background-color: #DEA47E;\n}\n.ms_containerflex .ms_container .ms_inputcomment[data-v-67cb3b51] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.ms_containerflex .ms_container .ms_inputcomment .ms_input-name[data-v-67cb3b51] {\n  background-color: #DEA47E;\n  border: 1px solid #81ADC8;\n  border-radius: 3px;\n  width: 100%;\n  height: 25px;\n  margin: 10px 0px;\n}\n.ms_containerflex .ms_container .ms_inputcomment .ms_input-text[data-v-67cb3b51] {\n  margin: 10px 0px;\n  background-color: #DEA47E;\n  border: 1px solid #81ADC8;\n  border-radius: 3px;\n  width: 100%;\n}\n.ms_containerflex .ms_container .ms_inputcomment .ms_btn[data-v-67cb3b51] {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 900;\n  color: #F8F2DC;\n  padding: 6px 25px;\n  margin-top: 10px;\n  font-size: 20px;\n  width: 100%;\n  border: 0;\n  background-color: #81ADC8;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);\n  background-image: linear-gradient(#9E6240, #9E6240);\n  background-position: 50% 50%;\n  background-repeat: no-repeat;\n  background-size: 0% 100%;\n  transition: background-size 0.5s, color 0.5s;\n  cursor: pointer;\n}\n.ms_containerflex .ms_container .ms_inputcomment .ms_btn[data-v-67cb3b51]:hover {\n  background-size: 100% 100%;\n  color: #F8F2DC;\n}\n.ms_containerflex .ms_container .ms_approved[data-v-67cb3b51] {\n  margin: 10px 0px;\n  background-color: #DEA47E;\n}", ""]);
 
 // exports
 
@@ -5666,181 +5672,195 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "ms_containerflex" }, [
     _c("div", { staticClass: "ms_container" }, [
-      _c("div", { staticClass: "ms_title" }, [
-        _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ms_image" }, [
-        _c("img", { attrs: { src: _vm.post.image, alt: "" } }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ms_content" }, [
-        _c("div", [_vm._v(_vm._s(_vm.post.content))]),
-      ]),
-      _vm._v(" "),
-      _vm.post.category
-        ? _c("div", { staticClass: "ms_categorybox" }, [
-            _c("h3", [_vm._v("Categoria")]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.post.category.name))]),
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.post.comments
-        ? _c(
-            "div",
-            { staticClass: "ms_commentbox" },
-            [
-              _c("h3", [_vm._v("Commenti")]),
-              _vm._v(" "),
-              _vm._l(_vm.post.comments, function (comment) {
-                return _c("div", { key: comment.id }, [
-                  _vm._v(
-                    "\r\n            " +
-                      _vm._s(comment.name) +
-                      "\r\n            " +
-                      _vm._s(comment.content) +
-                      "\r\n            "
-                  ),
-                ])
-              }),
-            ],
-            2
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.post.tags
-        ? _c("div", { staticClass: "ms_tagbox" }, [
-            _c("h3", [_vm._v("Tags")]),
-            _vm._v(" "),
-            _c(
-              "ul",
+      _c("div", { staticClass: "ms_postbox" }, [
+        _c("div", { staticClass: "ms_title" }, [
+          _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ms_image" }, [
+          _c("img", { attrs: { src: _vm.post.image, alt: "" } }),
+          _vm._v(" "),
+          _vm.post.category
+            ? _c("div", { staticClass: "ms_categorybox" }, [
+                _c("p", [_vm._v(_vm._s(_vm.post.category.name))]),
+              ])
+            : _vm._e(),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ms_content" }, [
+          _c("div", [_vm._v(_vm._s(_vm.post.content))]),
+        ]),
+        _vm._v(" "),
+        _vm.post.tags
+          ? _c(
+              "div",
+              { staticClass: "ms_tagbox" },
               _vm._l(_vm.post.tags, function (tag) {
-                return _c("li", { key: tag.id }, [
-                  _vm._v(
-                    "\r\n                    " +
-                      _vm._s(tag.name) +
-                      "\r\n                "
-                  ),
+                return _c("div", { key: tag.id }, [
+                  _c("span", [
+                    _vm._v(
+                      "\r\n                " +
+                        _vm._s(tag.name) +
+                        "\r\n                "
+                    ),
+                  ]),
                 ])
               }),
               0
-            ),
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", [
-        _c("h3", [_vm._v("Lascia un commento")]),
+            )
+          : _vm._e(),
         _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function ($event) {
-                $event.preventDefault()
-                return _vm.addComment()
+        _vm.post.comments
+          ? _c(
+              "div",
+              { staticClass: "ms_commentcontainer" },
+              [
+                _c("h3", [_vm._v("Commenti")]),
+                _vm._v(" "),
+                _vm._l(_vm.post.comments, function (comment) {
+                  return _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: comment.approved == 1,
+                          expression: "comment.approved == 1",
+                        },
+                      ],
+                      key: comment.id,
+                      staticClass: "ms_commentbox",
+                    },
+                    [
+                      _c("h3", [_vm._v(_vm._s(comment.name))]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(comment.content) + " ")]),
+                    ]
+                  )
+                }),
+              ],
+              2
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "ms_inputcomment" }, [
+          _c("h3", [_vm._v("Lascia un commento")]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                submit: function ($event) {
+                  $event.preventDefault()
+                  return _vm.addComment()
+                },
               },
             },
-          },
-          [
-            _c("input", {
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.formData.name,
+                    expression: "formData.name",
+                  },
+                ],
+                staticClass: "ms_input-name",
+                attrs: {
+                  type: "text",
+                  id: "name",
+                  placeholder: "Inserisci il Nome",
+                },
+                domProps: { value: _vm.formData.name },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.formData, "name", $event.target.value)
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.formData.content,
+                    expression: "formData.content",
+                  },
+                ],
+                staticClass: "ms_input-text",
+                attrs: {
+                  id: "content",
+                  cols: "30",
+                  rows: "10",
+                  placeholder: "Inserisci commento...",
+                },
+                domProps: { value: _vm.formData.content },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.formData, "content", $event.target.value)
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _vm.formErrors.content
+                ? _c(
+                    "div",
+                    { staticStyle: { background: "red", color: "white" } },
+                    [
+                      _c(
+                        "ul",
+                        _vm._l(_vm.formErrors.content, function (error, index) {
+                          return _c("li", { key: index }, [
+                            _vm._v(
+                              "\r\n                            " +
+                                _vm._s(error) +
+                                "\r\n                        "
+                            ),
+                          ])
+                        }),
+                        0
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "ms_btn", attrs: { type: "submit" } },
+                [_vm._v("Aggiungi Commento!")]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
               directives: [
                 {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.formData.name,
-                  expression: "formData.name",
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.commentSent,
+                  expression: "commentSent",
                 },
               ],
-              attrs: {
-                type: "text",
-                id: "name",
-                placeholder: "Inserisci il Nome",
-              },
-              domProps: { value: _vm.formData.name },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.formData, "name", $event.target.value)
-                },
-              },
-            }),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.formData.content,
-                  expression: "formData.content",
-                },
-              ],
-              attrs: {
-                id: "content",
-                cols: "30",
-                rows: "10",
-                placeholder: "Inserisci commento",
-              },
-              domProps: { value: _vm.formData.content },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.formData, "content", $event.target.value)
-                },
-              },
-            }),
-            _vm._v(" "),
-            _vm.formErrors.content
-              ? _c(
-                  "div",
-                  { staticStyle: { background: "red", color: "white" } },
-                  [
-                    _c(
-                      "ul",
-                      _vm._l(_vm.formErrors.content, function (error, index) {
-                        return _c("li", { key: index }, [
-                          _vm._v(
-                            "\r\n                            " +
-                              _vm._s(error) +
-                              "\r\n                        "
-                          ),
-                        ])
-                      }),
-                      0
-                    ),
-                  ]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c("button", { attrs: { type: "submit" } }, [
-              _vm._v("Aggiungi Commento"),
-            ]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.commentSent,
-                expression: "commentSent",
-              },
-            ],
-            staticStyle: { background: "green", color: "white" },
-          },
-          [
-            _vm._v(
-              "\r\n                Commento in fase di approvazione!\r\n\r\n            "
-            ),
-          ]
-        ),
+              staticClass: "ms_approved",
+            },
+            [
+              _vm._v(
+                "\r\n                Commento in fase di approvazione!\r\n\r\n            "
+              ),
+            ]
+          ),
+        ]),
       ]),
     ]),
   ])
